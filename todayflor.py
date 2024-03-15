@@ -1,12 +1,12 @@
-# Contents of ~/my_app/streamlit_app.py / streamlit run streamlit_app.py
+# Contents of ~/my_app/streamlit_app.py / streamlit run todayflor.py --server.port=5000
 import streamlit as st
 
 class FlowerApp:
     def __init__(self):
         self.page_names_to_funcs = {
             "Main Page": self.main_page,
-            "오늘의 꽃": self.page2,
-            "무작위 꽃": self.page3,
+            "today_flower": self.page2,
+            "rand_flower": self.page3,
             "FlorPick": self.page4,
         }
         self.run_app()
