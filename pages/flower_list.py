@@ -16,8 +16,6 @@ naver_client_secret = os.getenv("NAVER_CLIENT_SECRET")
 st.header('내 주변 꽃가게 검색하기')
 st.text("최대 5개까지 보여주며 리뷰순은 네이버 기준 입니다.")
 
-col1, col2 = st.columns(2)
-
 def search_shops(location, sort):
 
     sort_criteria = "random" if sort == "정확도 순" else "comment"
@@ -57,8 +55,8 @@ def search_shops(location, sort):
     else:
         st.write("Error Code:", rescode)
 
-with col1:
-    location = st.text_input("검색할 지역을 입력하세요(ㅇㅇ[시/군/구] ㅇㅇ[읍/면/동]): ")
+
+location = st.text_input("검색할 지역을 입력하세요(ㅇㅇ[시/군/구] ㅇㅇ[읍/면/동]): ")
 
 sort_type = st.radio("정렬 방식 선택:", ["정확도 순", "리뷰 순"])
 

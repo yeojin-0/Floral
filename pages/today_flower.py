@@ -27,6 +27,8 @@ def display_flower_data(flower_data):
         with tabs[i]:
             if img_url:
                 st.image(img_url, use_column_width=True)
+                st.caption(f"{flower_data['publish_org']}")
+
             else:
                 st.write("이미지를 찾을 수 없습니다.")
 
