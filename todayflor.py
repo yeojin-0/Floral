@@ -1,4 +1,5 @@
-# Contents of ~/my_app/streamlit_app.py / streamlit run todayflor.py --server.port=5000
+# Contents of ~/my_app/streamlit_app.py 
+#streamlit run todayflor.py --server.port=5000
 import streamlit as st
 
 class FlowerApp:
@@ -8,6 +9,7 @@ class FlowerApp:
             "today_flower": self.page2,
             "rand_flower": self.page3,
             "FlorPick": self.page4,
+            "list": self.page5,
         }
         self.run_app()
 
@@ -41,7 +43,7 @@ class FlowerApp:
         오늘의 꽃을 통해 자연의 아름다움을 만끽하고, 특별한 순간을 더욱 특별하게 만들어보세요. 아래 버튼을 클릭하여 주요 기능을 시작해보세요.
         """)
 
-        st.image("red_rose.jpg",use_column_width=True)
+        st.image("nsplash.jpg",use_column_width=True)
 
     def page2(self):
         st.markdown("# 오늘의 꽃 ")
@@ -53,6 +55,10 @@ class FlowerApp:
 
     def page4(self):
         st.markdown("# 플로픽 챗봇 ")
+        #st.sidebar.markdown("# 꽃다발 추천해주는 챗봇 플로픽!")
+
+    def page5(self):
+        st.markdown("# 내 주변 꽃가게 ")
         #st.sidebar.markdown("# 꽃다발 추천해주는 챗봇 플로픽!")
 
 if __name__ == "__main__":
