@@ -3,6 +3,7 @@ import streamlit as st
 from data.flower_data import get_flower_data
 
 st.header('무작위 날짜의 꽃')
+#st.sidebar.title('무작위 날짜의 꽃 확인하기')
 
 # 랜덤 날짜의 꽃 확인하기 - 30일 31일 처리하기
 def random_flower():

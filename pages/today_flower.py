@@ -31,7 +31,7 @@ def display_flower_data(flower_data):
                 st.write("이미지를 찾을 수 없습니다.")
 
 st.header('오늘의 꽃')
-st.sidebar.title('오늘의 꽃 확인하기')
+#st.sidebar.title('오늘의 꽃 확인하기')
 col1, col2 = st.columns(2)
 
 selected_date = st.date_input("보고 싶은 날짜를 선택하세요", value=None)

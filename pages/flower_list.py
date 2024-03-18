@@ -34,23 +34,27 @@ def search_shops(location, sort):
         response_body = response.read()
         result = json.loads(response_body)
 
-        shop_data = []
+        # 결과에서 카테고리가 '꽃집'에 해당하는 정보만 필터링하여 출력
         for item in result['items']:
             if '꽃집' in item['category']:
-                title = item['title']
-                link = item['link']
-                address = item['address']
-                roadAddress = item.get('roadAddress', '도로명 주소 정보 없음')
+                title = item['title']  # 가게 이름
+                link = item['link']  # 링크
+                address = item['address']  # 주소
+                roadAddress = item['roadAddress'] # 도로명 주소
+                 
+                st.markdown(f"""
+                        **가게 이름:** {title}  
 
-                shop_data.append({'가게 이름': title, '링크': link, '주소': address, '도로명 주소': roadAddress})
+                        **링크:**  {link}
 
-        if shop_data:
-            df = pd.DataFrame(shop_data)
-            st.dataframe(df, hide_index=True)
-        else:
-            st.info("해당 지역에 꽃가게가 없습니다.")
+                        **주소:** {address} 
+                        
+                        **도로명 주소:** {roadAddress} 
+
+                        """)
+                st.markdown("---")  # 구분선 추가
     else:
-        st.error("데이터를 불러오는 중 오류가 발생했습니다.")
+        st.write("Error Code:", rescode)
 
 with col1:
     location = st.text_input("검색할 지역을 입력하세요(5개까지 출력됩니다): ")
