@@ -1,4 +1,3 @@
-# Contents of ~/my_app/streamlit_app.py 
 #streamlit run todayflor.py --server.port=5000
 import streamlit as st
 
@@ -57,7 +56,7 @@ class FlowerApp:
 
     def page5(self):
         st.markdown("# 내 주변 꽃가게 ")
-        #st.sidebar.markdown("# 꽃다발 추천해주는 챗봇 플로픽!")
+        #st.sidebar.markdown("# 내 주변 꽃가게를 확인 할 수 있어요!")
 
 if __name__ == "__main__":
     app = FlowerApp()

@@ -95,8 +95,7 @@ def bouquet_chatbot():
             st.session_state.messages.append(ChatMessage(role="assistant", content=response.content))
 
 
-#random_flower()
-#get_bouquet_flowers()
 bouquet_chatbot()
+
 # 연결 종료
 connection.close()

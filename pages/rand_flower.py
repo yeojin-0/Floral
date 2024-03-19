@@ -2,11 +2,8 @@ import random
 import streamlit as st
 from data.flower_data import get_flower_data
 
-st.header('무작위 날짜의 꽃')
-#st.sidebar.title('무작위 날짜의 꽃 확인하기')
-
-# 랜덤 날짜의 꽃 확인하기 - 30일 31일 처리하기
-def random_flower():
+# 랜덤 날짜의 꽃 확인하기
+def random_flower_data():
     rand_month = random.randrange(1,13)
     rand_day = random.randrange(1,31)
     
@@ -30,7 +27,6 @@ def random_flower():
     f_type = flower_data['f_type']
     publish_org = flower_data['publish_org']
 
-    # col1 컬럼에 변수 적용
     st.subheader("{0}월 {1}일".format(f_month, f_day))
     st.markdown(f"""
     :blossom:**꽃 이름(국문):**:blossom: {flow_nm}  
@@ -55,25 +51,19 @@ def random_flower():
     tabs = st.tabs(["꽃 이미지 1", "꽃 이미지 2", "꽃 이미지 3"])
 
     # 각 탭에 이미지 및 정보 출력
-    with tabs[0]:
-        if flower_data['img_url1']:
-            st.image(flower_data['img_url1'], use_column_width=True)
-        else:
-            st.write("이미지를 찾을 수 없습니다.")
+    for i, img_url in enumerate([flower_data['img_url1'], flower_data['img_url2'], flower_data['img_url3']]):
+        with tabs[i]:
+            if img_url:
+                st.image(img_url, use_column_width=True)
+                st.caption(f"{flower_data['publish_org']}")
 
-    with tabs[1]:
-        if flower_data['img_url2']:
-            st.image(flower_data['img_url2'], use_column_width=True)
-        else:
-            st.write("이미지를 찾을 수 없습니다.")
-
-    with tabs[2]:
-        if flower_data['img_url3']:
-            st.image(flower_data['img_url3'],use_column_width=True)
-        else:
-            st.write("이미지를 찾을 수 없습니다.")
+            else:
+                st.write("이미지를 찾을 수 없습니다.")
 
     st.caption(f"{publish_org}")
 
-random_flower()
+if __name__ == "__main__":
+    st.header('무작위 날짜의 꽃')
+    #st.sidebar.title('무작위 날짜의 꽃 확인하기')
+    random_flower_data()
 
