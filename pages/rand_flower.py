@@ -1,3 +1,4 @@
+# 무작위 날짜의 꽃
 import random
 import streamlit as st
 from data.flower_data import get_flower_data

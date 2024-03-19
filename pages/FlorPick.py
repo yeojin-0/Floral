@@ -1,3 +1,4 @@
+# 꽃다발 추천 챗봇
 import mysql.connector
 import streamlit as st
 from langchain.callbacks.base import BaseCallbackHandler
@@ -34,7 +35,6 @@ connection = mysql.connector.connect(
 # 커서 생성
 cursor = connection.cursor()
 
-st.header('플로픽이 꽃다발을 추천해줘요!')
 
 # 꽃다발 상황에 따라 추천 - 챗봇 
 def bouquet_chatbot():
@@ -95,7 +95,10 @@ def bouquet_chatbot():
             st.session_state.messages.append(ChatMessage(role="assistant", content=response.content))
 
 
-bouquet_chatbot()
+if __name__ == "__main__":
+    st.header('플로픽이 꽃다발을 추천해줘요!')
 
-# 연결 종료
-connection.close()
+    bouquet_chatbot()
+
+    # 연결 종료
+    connection.close()

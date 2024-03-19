@@ -1,3 +1,4 @@
+# 오늘의 꽃
 import streamlit as st
 from data.flower_data import get_flower_data
 from datetime import datetime
@@ -25,7 +26,7 @@ def display_flower_data(flower_data):
     
     #탭 생성
     tabs = st.tabs(["꽃 이미지 1", "꽃 이미지 2", "꽃 이미지 3"])
-    
+
     for i, img_url in enumerate([flower_data['img_url1'], flower_data['img_url2'], flower_data['img_url3']]):
         with tabs[i]:
             if img_url:

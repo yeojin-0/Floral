@@ -1,4 +1,5 @@
 #streamlit run todayflor.py --server.port=5000
+# 메인 페이지
 import streamlit as st
 
 class FlowerApp:
@@ -40,7 +41,7 @@ class FlowerApp:
 
         """)
 
-        st.image("nsplash.jpg",use_column_width=True)
+        st.image("pink_rose.jpg",use_column_width=True)
 
     def page2(self):
         st.markdown("# 오늘의 꽃 ")

@@ -1,4 +1,4 @@
-# flower_data.py
+# flower_data
 import requests
 import xml.etree.ElementTree as ET
 from dotenv import load_dotenv
